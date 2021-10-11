@@ -1,5 +1,10 @@
 ﻿
+
+
+
+
 #include <iostream>
+
 using namespace std;
 
 struct Stack
@@ -283,6 +288,8 @@ string check(string str)
         {
             ch = 1;
         }
+        if (str[i] == ')' && str[i + 1] == '(')
+            return "ERROR";
         if (str[i] >= '0' && str[i] <= '9' && str[i + 1] != '*' && str[i + 1] != '*' && str[i + 1] != '/' && str[i + 1] != '+' && str[i + 1] != '-' && str[i + 1] != ')')
 
         {
@@ -308,10 +315,12 @@ string check(string str)
         return "ERROR";
     return "SccA";
 }
+
+
+
 int main()
 {
     setlocale(LC_ALL, "Rus");
-
     string uravn = "  ";
     while (true)
     {
